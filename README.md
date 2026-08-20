@@ -10,3 +10,15 @@ cd docshield-ai
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
+pip install -e ".[nlp]"
+python -m spacy download en_core_web_sm
+docshield scan ./data --output json --report-path ./reports/docshield
+docshield scan ./data --output html --report-path ./reports/docshield
+docshield scan ./data --output csv --report-path ./reports/docshield.csv
+pytest
+docker build -f docker/Dockerfile -t docshield-ai .
+docker run --rm -v "$PWD":/data docshield-ai scan /data --output json --report-path /data/report
+
+*(Nota: Solo asegúrate de cambiar `tu-usuario` en el link de arriba por tu nombre de usuario de GitHub).*
+
+4. Baja hasta el final y dale a **"Commit changes..."**.
