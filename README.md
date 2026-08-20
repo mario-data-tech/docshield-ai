@@ -5,7 +5,7 @@ DocShield.ai es un motor ligero de descubrimiento de datos sensibles y cumplimie
 ## Instalación
 
 ```bash
-git clone [https://github.com/tu-usuario/docshield-ai.git](https://github.com/tu-usuario/docshield-ai.git)
+git clone [https://github.com/mario-data-tech/docshield-ai.git](https://github.com/mario-data-tech/docshield-ai.git)
 cd docshield-ai
 python -m venv .venv
 source .venv/bin/activate
@@ -18,7 +18,3 @@ docshield scan ./data --output csv --report-path ./reports/docshield.csv
 pytest
 docker build -f docker/Dockerfile -t docshield-ai .
 docker run --rm -v "$PWD":/data docshield-ai scan /data --output json --report-path /data/report
-
-*(Nota: Solo asegúrate de cambiar `tu-usuario` en el link de arriba por tu nombre de usuario de GitHub).*
-
-4. Baja hasta el final y dale a **"Commit changes..."**.
